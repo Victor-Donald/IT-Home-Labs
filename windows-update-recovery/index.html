@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Windows Update & Endpoint Recovery Lab | Victor Donald</title>
+
+    <meta name="description"
+          content="Hands-on Windows 11 troubleshooting lab demonstrating Windows Update diagnostics, Event Viewer, DISM, SFC, Windows repair, system integrity verification, and endpoint recovery.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container nav-container">
+
+        <div class="brand">
+            <a href="../index.html">Victor Donald</a>
+            <span>IT Support Home Labs</span>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#labs">Home Labs</a>
+            <a href="../index.html#methodology">Methodology</a>
+            <a href="../index.html#skills">Skills</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <p class="eyebrow">
+                HOME LAB 02 • WINDOWS TROUBLESHOOTING • ENDPOINT RECOVERY
+            </p>
+
+            <h1>
+                Windows Update &amp;<br>
+                Endpoint Recovery Lab
+            </h1>
+
+            <p class="hero-text">
+                Diagnosed and resolved Windows 11 update and system
+                integrity issues using Event Viewer, DISM, SFC,
+                Windows installation media, in-place repair, and
+                post-repair verification.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a class="button primary"
+                   href="#incident">
+                    View Troubleshooting Case
+                </a>
+
+                <a class="button secondary"
+                   href="../index.html">
+                    ← Back to Home Labs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INCIDENT -->
+
+    <section id="incident" class="section">
+
+        <div class="container narrow">
+
+            <p class="section-label">TROUBLESHOOTING CASE</p>
+
+            <h2>Windows Update Installation Failure</h2>
+
+            <p>
+                The Windows 11 Pro endpoint experienced repeated
+                Windows Update failures while attempting to download
+                and install a security update.
+            </p>
+
+            <p>
+                The objective was to determine whether the failure
+                was caused by Windows Update components, system-file
+                corruption, or a damaged Windows component store,
+                then restore the operating system to a healthy state.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SYMPTOMS -->
+
+    <section class="section labs-section">
+
+        <div class="container">
+
+            <p class="section-label">INITIAL SYMPTOMS</p>
+
+            <h2>Observed Problems</h2>
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+
+                    <span>01</span>
+
+                    <h3>Windows Update Failure</h3>
+
+                    <p>
+                        Windows Update repeatedly failed while
+                        attempting to download or install an update.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>02</span>
+
+                    <h3>Error Code</h3>
+
+                    <p>
+                        Windows Update reported error
+                        <strong>0x80070570</strong>.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>03</span>
+
+                    <h3>Event Viewer</h3>
+
+                    <p>
+                        Windows Update activity was reviewed in
+                        Event Viewer, including Event ID 31 related
+                        to an update download failure.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>04</span>
+
+                    <h3>System Integrity</h3>
+
+                    <p>
+                        System File Checker initially reported
+                        corrupted files that could not all be
+                        repaired automatically.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIAGNOSIS -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <p class="section-label">DIAGNOSIS</p>
+
+            <h2>Systematic Troubleshooting Process</h2>
+
+            <p class="section-intro">
+                Troubleshooting was performed in stages to determine
+                whether the problem originated with Windows Update,
+                the component store, or protected system files.
+            </p>
+
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+
+                    <span>01</span>
+
+                    <h3>Reviewed Windows Update</h3>
+
+                    <p>
+                        Examined update behavior and documented the
+                        recurring installation/download failure.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>02</span>
+
+                    <h3>Checked Event Viewer</h3>
+
+                    <p>
+                        Reviewed Windows Update events to identify
+                        relevant failure information and error codes.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>03</span>
+
+                    <h3>Generated WindowsUpdate.log</h3>
+
+                    <p>
+                        Generated and reviewed the Windows Update
+                        log to investigate update activity and
+                        troubleshooting information.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>04</span>
+
+                    <h3>Ran DISM</h3>
+
+                    <p>
+                        Used Deployment Image Servicing and Management
+                        to examine and repair the Windows image.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>05</span>
+
+                    <h3>Ran SFC</h3>
+
+                    <p>
+                        Used System File Checker to evaluate protected
+                        Windows system files and verify system integrity.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>06</span>
+
+                    <h3>Verified Component Store</h3>
+
+                    <p>
+                        Confirmed that the Windows component store
+                        did not contain detected corruption after
+                        remediation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REPAIR -->
+
+    <section class="section methodology-section">
+
+        <div class="container">
+
+            <p class="section-label">REMEDIATION</p>
+
+            <h2>Windows 11 In-Place Repair</h2>
+
+            <p class="section-intro">
+                Because automated system-file repair did not initially
+                resolve the issue, Windows 11 installation media was
+                used to perform an in-place operating system repair.
+            </p>
+
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+
+                    <span>01</span>
+
+                    <h3>Windows 11 Installation Media</h3>
+
+                    <p>
+                        Used matching Windows 11 installation media
+                        to provide a trusted operating-system repair
+                        source.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>02</span>
+
+                    <h3>Keep Personal Files &amp; Apps</h3>
+
+                    <p>
+                        Selected the in-place upgrade option that
+                        retained existing personal files and
+                        installed applications.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>03</span>
+
+                    <h3>Completed Repair</h3>
+
+                    <p>
+                        Allowed Windows Setup to complete the
+                        operating-system repair and return to the
+                        Windows desktop.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>04</span>
+
+                    <h3>Post-Repair Validation</h3>
+
+                    <p>
+                        Re-ran Windows system-integrity checks after
+                        the repair to verify that the operating system
+                        was healthy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VERIFICATION -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <p class="section-label">VERIFICATION</p>
+
+            <h2>Final System Health Check</h2>
+
+
+            <div class="lab-grid">
+
+                <article class="lab-card">
+
+                    <div class="lab-number">SFC</div>
+
+                    <h3>Integrity Verification</h3>
+
+                    <p>
+                        After the repair, System File Checker reported:
+                    </p>
+
+                    <p>
+                        <strong>
+                            Windows Resource Protection did not find
+                            any integrity violations.
+                        </strong>
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">DISM</div>
+
+                    <h3>Component Store Verification</h3>
+
+                    <p>
+                        The Windows component store was checked after
+                        remediation and no component-store corruption
+                        was detected.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">BUILD</div>
+
+                    <h3>Windows 11 Version</h3>
+
+                    <p>
+                        The repaired endpoint was verified at Windows
+                        11 build <strong>26200.9168</strong>.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">UPDATE</div>
+
+                    <h3>Update Verification</h3>
+
+                    <p>
+                        The Windows Update process was successfully
+                        completed and the endpoint was returned to a
+                        healthy operating state.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TROUBLESHOOTING WORKFLOW -->
+
+    <section class="section methodology-section">
+
+        <div class="container">
+
+            <p class="section-label">HELP DESK WORKFLOW</p>
+
+            <h2>Tier 1 Troubleshooting Approach</h2>
+
+            <p class="section-intro">
+                This lab demonstrates a repeatable approach that can
+                be applied to common endpoint incidents in a service
+                desk environment.
+            </p>
+
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+
+                    <span>01</span>
+
+                    <h3>Identify</h3>
+
+                    <p>
+                        Gather the user's symptoms, error messages,
+                        affected endpoint, and update information.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>02</span>
+
+                    <h3>Investigate</h3>
+
+                    <p>
+                        Review Windows Update, Event Viewer, logs,
+                        and system-integrity information.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>03</span>
+
+                    <h3>Diagnose</h3>
+
+                    <p>
+                        Determine whether the issue is related to
+                        update components, system files, or the
+                        Windows component store.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>04</span>
+
+                    <h3>Remediate</h3>
+
+                    <p>
+                        Apply the least disruptive appropriate
+                        repair method before escalating to more
+                        advanced recovery procedures.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>05</span>
+
+                    <h3>Verify</h3>
+
+                    <p>
+                        Confirm system integrity and verify that
+                        Windows Update is functioning correctly.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>06</span>
+
+                    <h3>Document</h3>
+
+                    <p>
+                        Record the symptoms, diagnostic findings,
+                        remediation steps, and final resolution.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="section skills-section">
+
+        <div class="container">
+
+            <p class="section-label">SKILLS DEMONSTRATED</p>
+
+            <h2>Technical Skills</h2>
+
+            <div class="skills-list">
+
+                <span>Windows 11 Pro</span>
+                <span>Windows Update</span>
+                <span>Event Viewer</span>
+                <span>DISM</span>
+                <span>SFC</span>
+                <span>WindowsUpdate.log</span>
+                <span>System Integrity</span>
+                <span>Component Store</span>
+                <span>OS Repair</span>
+                <span>In-Place Upgrade</span>
+                <span>Installation Media</span>
+                <span>Endpoint Troubleshooting</span>
+                <span>Error Code Analysis</span>
+                <span>Root Cause Analysis</span>
+                <span>Incident Documentation</span>
+                <span>Tier 1 Support</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <section class="section contact-section">
+
+        <div class="container narrow">
+
+            <p class="section-label">CONTINUE EXPLORING</p>
+
+            <h2>More IT Support Home Labs</h2>
+
+            <p>
+                Continue exploring hands-on labs covering Active
+                Directory, enterprise support, MDM, networking,
+                hardware, and Windows deployment.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="../active-directory/index.html">
+                    Active Directory Lab
+                </a>
+
+                <a href="../enterprise-support-mdm/index.html">
+                    Enterprise Support &amp; MDM
+                </a>
+
+                <a href="../index.html">
+                    All Home Labs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <p>
+            © 2026 Victor Donald. IT Support Home Labs.
+        </p>
+
+        <p>
+            Hands-on IT support • Troubleshooting • Enterprise Technology
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
