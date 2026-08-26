@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Network & Connectivity Troubleshooting Lab | Victor Donald</title>
+
+    <meta name="description"
+          content="Hands-on network troubleshooting home lab demonstrating TCP/IP, DHCP, DNS, APIPA, ipconfig, ping, nslookup, connectivity diagnostics, and Tier 1 support workflows.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container nav-container">
+
+        <div class="brand">
+            <a href="../index.html">Victor Donald</a>
+            <span>IT Support Home Labs</span>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#labs">Home Labs</a>
+            <a href="../index.html#methodology">Methodology</a>
+            <a href="../index.html#skills">Skills</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <p class="eyebrow">
+                HOME LAB 04 • NETWORKING • TIER 1 TROUBLESHOOTING
+            </p>
+
+            <h1>
+                Network &amp;<br>
+                Connectivity Troubleshooting Lab
+            </h1>
+
+            <p class="hero-text">
+                Hands-on network troubleshooting exercises using
+                Windows command-line tools to diagnose TCP/IP,
+                DHCP, DNS, APIPA, connectivity, and local network
+                service issues.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a class="button primary"
+                   href="#diagnostics">
+                    Explore Lab
+                </a>
+
+                <a class="button secondary"
+                   href="../index.html">
+                    ← Back to Home Labs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OBJECTIVE -->
+
+    <section class="section">
+
+        <div class="container narrow">
+
+            <p class="section-label">LAB OBJECTIVE</p>
+
+            <h2>Diagnosing Connectivity Problems</h2>
+
+            <p>
+                This lab was designed to practice a structured
+                approach to diagnosing network connectivity issues
+                commonly encountered by Tier 1 service desk technicians.
+            </p>
+
+            <p>
+                The exercises focused on identifying incorrect
+                addressing, DHCP failures, DNS problems, local
+                connectivity issues, and service reachability using
+                built-in Windows diagnostic tools.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIAGNOSTIC TOOLS -->
+
+    <section id="diagnostics" class="section labs-section">
+
+        <div class="container">
+
+            <p class="section-label">DIAGNOSTIC TOOLS</p>
+
+            <h2>Windows Network Troubleshooting Toolkit</h2>
+
+            <div class="lab-grid">
+
+                <article class="lab-card">
+
+                    <div class="lab-number">01</div>
+
+                    <h3>ipconfig</h3>
+
+                    <p>
+                        Used to inspect IPv4 addressing, subnet
+                        configuration, default gateway, and other
+                        TCP/IP configuration details.
+                    </p>
+
+                    <div class="tags">
+                        <span>TCP/IP</span>
+                        <span>IPv4</span>
+                        <span>Windows CLI</span>
+                    </div>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">02</div>
+
+                    <h3>ping</h3>
+
+                    <p>
+                        Used to test network reachability and determine
+                        whether a host or service could be reached
+                        across the network.
+                    </p>
+
+                    <div class="tags">
+                        <span>Connectivity</span>
+                        <span>ICMP</span>
+                        <span>Diagnostics</span>
+                    </div>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">03</div>
+
+                    <h3>nslookup</h3>
+
+                    <p>
+                        Used to test DNS name resolution and verify
+                        that hostnames and domain services could be
+                        resolved correctly.
+                    </p>
+
+                    <div class="tags">
+                        <span>DNS</span>
+                        <span>Name Resolution</span>
+                        <span>Diagnostics</span>
+                    </div>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">04</div>
+
+                    <h3>DNS Testing</h3>
+
+                    <p>
+                        Practiced verifying DNS responses and
+                        troubleshooting name-resolution problems
+                        affecting access to network services.
+                    </p>
+
+                    <div class="tags">
+                        <span>DNS</span>
+                        <span>SRV Records</span>
+                        <span>Domain Services</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TROUBLESHOOTING SCENARIOS -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <p class="section-label">TROUBLESHOOTING SCENARIOS</p>
+
+            <h2>Problems Diagnosed</h2>
+
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+
+                    <span>01</span>
+
+                    <h3>APIPA Addressing</h3>
+
+                    <p>
+                        Identified automatic private IP addressing
+                        as an indicator that a system was not receiving
+                        a valid address through DHCP.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>02</span>
+
+                    <h3>DHCP Connectivity</h3>
+
+                    <p>
+                        Investigated DHCP-related addressing problems
+                        and verified TCP/IP configuration to isolate
+                        connectivity failures.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>03</span>
+
+                    <h3>DNS Resolution</h3>
+
+                    <p>
+                        Used DNS queries to determine whether
+                        connectivity problems were caused by name
+                        resolution rather than basic network access.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>04</span>
+
+                    <h3>Host Reachability</h3>
+
+                    <p>
+                        Used ping testing to determine whether
+                        endpoints and network services were reachable.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>05</span>
+
+                    <h3>TCP/IP Configuration</h3>
+
+                    <p>
+                        Examined IP address, subnet mask, gateway,
+                        and DNS configuration to identify incorrect
+                        network settings.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>06</span>
+
+                    <h3>Service Verification</h3>
+
+                    <p>
+                        Performed follow-up tests after remediation
+                        to verify that network services and connectivity
+                        were restored.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TROUBLESHOOTING PROCESS -->
+
+    <section class="section methodology-section">
+
+        <div class="container">
+
+            <p class="section-label">TROUBLESHOOTING PROCESS</p>
+
+            <h2>Structured Network Diagnosis</h2>
+
+            <p class="section-intro">
+                The lab follows a layered troubleshooting process
+                that can be applied to common user connectivity
+                incidents.
+            </p>
+
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+
+                    <span>01</span>
+
+                    <h3>Check Configuration</h3>
+
+                    <p>
+                        Verify the endpoint's IP address, subnet mask,
+                        gateway, and DNS settings.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>02</span>
+
+                    <h3>Test Local Connectivity</h3>
+
+                    <p>
+                        Use local and loopback testing to determine
+                        whether the TCP/IP stack and local services
+                        are functioning.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>03</span>
+
+                    <h3>Test Network Reachability</h3>
+
+                    <p>
+                        Use ping testing to determine whether the
+                        endpoint can reach required network resources.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>04</span>
+
+                    <h3>Test DNS</h3>
+
+                    <p>
+                        Use nslookup and DNS queries to determine
+                        whether name resolution is functioning.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>05</span>
+
+                    <h3>Identify Root Cause</h3>
+
+                    <p>
+                        Compare diagnostic results to isolate the
+                        most likely source of the connectivity problem.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span>06</span>
+
+                    <h3>Verify Resolution</h3>
+
+                    <p>
+                        Repeat the appropriate diagnostic tests to
+                        confirm that connectivity has been restored.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HELP DESK APPLICATION -->
+
+    <section class="section">
+
+        <div class="container narrow">
+
+            <p class="section-label">HELP DESK APPLICATION</p>
+
+            <h2>Applying Network Skills to User Support</h2>
+
+            <p>
+                Network issues frequently appear to users as
+                application or login problems. A structured network
+                diagnostic process helps determine whether the
+                underlying problem is connectivity, DNS, addressing,
+                authentication, or the application itself.
+            </p>
+
+            <p>
+                For a Tier 1 support incident, these diagnostics can
+                help determine whether the issue can be resolved
+                directly or should be escalated to a network or
+                infrastructure team.
+            </p>
+
+            <p>
+                Troubleshooting results can then be documented in
+                the service desk ticket so the next support level
+                has accurate diagnostic information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="section skills-section">
+
+        <div class="container">
+
+            <p class="section-label">SKILLS DEMONSTRATED</p>
+
+            <h2>Technical Skills</h2>
+
+            <div class="skills-list">
+
+                <span>TCP/IP</span>
+                <span>IPv4</span>
+                <span>DHCP</span>
+                <span>DNS</span>
+                <span>APIPA</span>
+                <span>Network Diagnostics</span>
+                <span>ipconfig</span>
+                <span>ping</span>
+                <span>nslookup</span>
+                <span>Loopback Testing</span>
+                <span>Connectivity Troubleshooting</span>
+                <span>Name Resolution</span>
+                <span>Windows Command Line</span>
+                <span>Domain Connectivity</span>
+                <span>Tier 1 Troubleshooting</span>
+                <span>Incident Documentation</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <section class="section contact-section">
+
+        <div class="container narrow">
+
+            <p class="section-label">CONTINUE EXPLORING</p>
+
+            <h2>More IT Support Home Labs</h2>
+
+            <p>
+                Explore additional hands-on labs covering Active
+                Directory, Windows recovery, enterprise support,
+                hardware, and Windows deployment.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="../active-directory/index.html">
+                    Active Directory Lab
+                </a>
+
+                <a href="../windows-update-recovery/index.html">
+                    Windows Update &amp; Recovery
+                </a>
+
+                <a href="../enterprise-support-mdm/index.html">
+                    Enterprise Support &amp; MDM
+                </a>
+
+                <a href="../index.html">
+                    All Home Labs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <p>
+            © 2026 Victor Donald. IT Support Home Labs.
+        </p>
+
+        <p>
+            Hands-on IT support • Troubleshooting • Enterprise Technology
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
