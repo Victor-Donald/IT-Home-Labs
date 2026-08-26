@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Active Directory & Windows 11 Support Lab | Victor Donald</title>
+
+    <meta name="description"
+          content="Hands-on Active Directory and Windows 11 support home lab demonstrating AD DS, DNS, domain authentication, user and group management, permissions, and troubleshooting.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container nav-container">
+
+        <div class="brand">
+            <a href="../index.html">Victor Donald</a>
+            <span>IT Support Home Labs</span>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#labs">Home Labs</a>
+            <a href="../index.html#methodology">Methodology</a>
+            <a href="../index.html#skills">Skills</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <p class="eyebrow">
+                HOME LAB 01 • ACTIVE DIRECTORY • WINDOWS SUPPORT
+            </p>
+
+            <h1>
+                Active Directory &amp;<br>
+                Windows 11 Support Lab
+            </h1>
+
+            <p class="hero-text">
+                Built and supported a virtualized Windows Server and
+                Windows 11 environment to practice enterprise
+                Active Directory administration, DNS troubleshooting,
+                authentication, account access, permissions, and
+                Tier 1 desktop support workflows.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a class="button primary"
+                   href="#environment">
+                    Explore Lab
+                </a>
+
+                <a class="button secondary"
+                   href="../index.html">
+                    ← Back to Home Labs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OBJECTIVE -->
+
+    <section class="section">
+
+        <div class="container narrow">
+
+            <p class="section-label">LAB OBJECTIVE</p>
+
+            <h2>Simulating an Enterprise Support Environment</h2>
+
+            <p>
+                The objective of this lab was to build a functional
+                Windows domain environment and use it to practice
+                common enterprise IT support tasks.
+            </p>
+
+            <p>
+                The environment was used to troubleshoot user
+                authentication, domain connectivity, DNS resolution,
+                account access, shared resources, and Windows client
+                issues using a structured diagnostic process.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENVIRONMENT -->
+
+    <section id="environment" class="section labs-section">
+
+        <div class="container">
+
+            <p class="section-label">LAB ENVIRONMENT</p>
+
+            <h2>Virtualized Enterprise Environment</h2>
+
+            <p class="section-intro">
+                The environment was built using VirtualBox and
+                Windows virtual machines to simulate a small
+                enterprise domain.
+            </p>
+
+
+            <div class="lab-grid">
+
+                <article class="lab-card">
+
+                    <div class="lab-number">SERVER</div>
+
+                    <h3>ADLAB-DC01</h3>
+
+                    <p>
+                        Windows Server virtual machine configured
+                        to provide Active Directory Domain Services
+                        and DNS for the lab environment.
+                    </p>
+
+                    <div class="tags">
+                        <span>Windows Server</span>
+                        <span>AD DS</span>
+                        <span>DNS</span>
+                    </div>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">CLIENT</div>
+
+                    <h3>CLIENT02</h3>
+
+                    <p>
+                        Windows 11 Pro virtual machine joined to
+                        the <strong>adlab.test</strong> domain and
+                        used for client-side troubleshooting and
+                        authentication testing.
+                    </p>
+
+                    <div class="tags">
+                        <span>Windows 11 Pro</span>
+                        <span>Domain Joined</span>
+                        <span>VirtualBox</span>
+                    </div>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">DOMAIN</div>
+
+                    <h3>adlab.test</h3>
+
+                    <p>
+                        Internal Active Directory domain used to
+                        practice centralized identity management,
+                        DNS resolution, authentication, and
+                        resource access.
+                    </p>
+
+                    <div class="tags">
+                        <span>Active Directory</span>
+                        <span>DNS</span>
+                        <span>Authentication</span>
+                    </div>
+
+                </article>
+
+
+                <article class="lab-card">
+
+                    <div class="lab-number">VIRTUALIZATION</div>
+
+                    <h3>VirtualBox</h3>
+
+                    <p>
+                        Used VirtualBox networking and virtual
+                        machine configuration to create an isolated
+                        enterprise-style support environment.
+                    </p>
+
+                    <div class="tags">
+                        <span>VirtualBox</span>
+                        <span>Virtual Networking</span>
+                        <span>VM Support</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONFIGURATION -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <p class="section-label">CONFIGURATION</p>
+
+            <h2>What I Configured</h2>
+
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+                    <span>01</span>
+                    <h3>Active Directory</h3>
+                    <p>
+                        Configured Active Directory Domain Services
+                        and established the <strong>adlab.test</strong>
+                        domain.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>02</span>
+                    <h3>DNS</h3>
+                    <p>
+                        Configured and tested DNS resolution required
+                        for domain authentication and client
+                        connectivity.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>03</span>
+                    <h3>User Accounts</h3>
+                    <p>
+                        Created and managed test user accounts to
+                        practice account administration and
+                        authentication workflows.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>04</span>
+                    <h3>Security Groups</h3>
+                    <p>
+                        Created security groups and practiced
+                        assigning users to groups for controlled
+                        resource access.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>05</span>
+                    <h3>Organizational Units</h3>
+                    <p>
+                        Created organizational structures to
+                        practice basic Active Directory administration
+                        and organization.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>06</span>
+                    <h3>Domain Join</h3>
+                    <p>
+                        Joined CLIENT02 to the domain and verified
+                        successful domain authentication.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TROUBLESHOOTING -->
+
+    <section class="section methodology-section">
+
+        <div class="container">
+
+            <p class="section-label">TROUBLESHOOTING</p>
+
+            <h2>Problems Diagnosed &amp; Verified</h2>
+
+            <p class="section-intro">
+                The lab was used to practice systematic troubleshooting
+                rather than simply configuring the environment.
+            </p>
+
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+                    <span>01</span>
+                    <h3>DNS Resolution</h3>
+                    <p>
+                        Used <strong>nslookup</strong> and DNS
+                        queries to verify that the client could
+                        resolve the Active Directory domain.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>02</span>
+                    <h3>Domain Connectivity</h3>
+                    <p>
+                        Used network diagnostic commands including
+                        <strong>ping</strong> and <strong>ipconfig</strong>
+                        to isolate connectivity and TCP/IP issues.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>03</span>
+                    <h3>AD DNS Records</h3>
+                    <p>
+                        Verified Active Directory DNS service records,
+                        including LDAP-related SRV records required
+                        for domain services.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>04</span>
+                    <h3>Authentication</h3>
+                    <p>
+                        Tested domain authentication and successfully
+                        signed into CLIENT02 using the
+                        <strong>ADLAB\Administrator</strong> account.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>05</span>
+                    <h3>Resource Access</h3>
+                    <p>
+                        Tested access to shared resources and
+                        verified permissions using the server's
+                        network address.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>06</span>
+                    <h3>Verification</h3>
+                    <p>
+                        Repeated diagnostic tests after remediation
+                        to confirm that the environment was operating
+                        correctly.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUPPORT WORKFLOW -->
+
+    <section class="section">
+
+        <div class="container narrow">
+
+            <p class="section-label">TIER 1 SUPPORT APPLICATION</p>
+
+            <h2>How This Lab Applies to Help Desk Support</h2>
+
+            <p>
+                The lab demonstrates a structured approach to common
+                user-support issues involving account access,
+                authentication, connectivity, DNS, Windows clients,
+                and shared resources.
+            </p>
+
+            <p>
+                When troubleshooting a reported issue, I practice
+                identifying the user's symptoms, gathering relevant
+                information, testing the most likely causes, applying
+                remediation, verifying the result, and documenting
+                the resolution.
+            </p>
+
+            <div class="methodology-grid">
+
+                <div class="method-card">
+                    <span>USER ISSUE</span>
+                    <h3>Identify</h3>
+                    <p>
+                        Determine what the user is experiencing and
+                        identify the affected account, system, or
+                        resource.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>DIAGNOSIS</span>
+                    <h3>Isolate</h3>
+                    <p>
+                        Use appropriate Windows, DNS, and network
+                        diagnostics to isolate the source of the
+                        problem.
+                    </p>
+                </div>
+
+
+                <div class="method-card">
+                    <span>RESOLUTION</span>
+                    <h3>Verify</h3>
+                    <p>
+                        Apply the appropriate corrective action and
+                        confirm that the user or system can perform
+                        the required task.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="section skills-section">
+
+        <div class="container">
+
+            <p class="section-label">SKILLS DEMONSTRATED</p>
+
+            <h2>Technical Skills</h2>
+
+            <div class="skills-list">
+
+                <span>Active Directory</span>
+                <span>AD DS</span>
+                <span>DNS</span>
+                <span>Windows Server</span>
+                <span>Windows 11 Pro</span>
+                <span>Domain Join</span>
+                <span>User Accounts</span>
+                <span>Security Groups</span>
+                <span>Organizational Units</span>
+                <span>Authentication</span>
+                <span>Permissions</span>
+                <span>TCP/IP</span>
+                <span>Network Troubleshooting</span>
+                <span>ping</span>
+                <span>ipconfig</span>
+                <span>nslookup</span>
+                <span>VirtualBox</span>
+                <span>Endpoint Support</span>
+                <span>Tier 1 Troubleshooting</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <section class="section contact-section">
+
+        <div class="container narrow">
+
+            <p class="section-label">CONTINUE EXPLORING</p>
+
+            <h2>More IT Support Home Labs</h2>
+
+            <p>
+                Explore additional hands-on labs covering Windows
+                recovery, endpoint support, MDM, networking,
+                hardware, and deployment.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="../windows-update-recovery/index.html">
+                    Windows Update &amp; Recovery
+                </a>
+
+                <a href="../enterprise-support-mdm/index.html">
+                    Enterprise Support &amp; MDM
+                </a>
+
+                <a href="../index.html">
+                    All Home Labs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <p>
+            © 2026 Victor Donald. IT Support Home Labs.
+        </p>
+
+        <p>
+            Hands-on IT support • Troubleshooting • Enterprise Technology
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
